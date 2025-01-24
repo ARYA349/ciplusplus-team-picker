@@ -9,7 +9,7 @@ import { useTheme } from '../contexts/ThemeContext'
 const allMembers = [
   'Amel', 'Fanny', 'Talitha', 'Farha', 'Fenty', 'Fatra', 'Azka', 'Shelva', 'Sekar', 'Haifa',
 'Arya', 'Adit', 'Aar', 'Fadil', 'Yusa', 'Bajsan', 'Rai', 'Iki', 'Farid', 'Fajar',
-'Kevin', 'Rafli', 'Akbar', 'Nabil', 'Isan', 'Dimas', 'Andi', 'Dhiya', 'Try', 'Angra'
+'Kevin', 'Rafli', 'Akbar', 'Nabil', 'Dimas', 'Andi', 'Dhiya', 'Try', 'Angra'
 ]
 
 export default function TeamPicker() {
