@@ -1,5 +1,5 @@
 const womenMembers = ['Amel', 'Fanny', 'Talitha', 'Farha', 'Fenty', 'Fatra', 'Azka', 'Shelva', 'Sekar', 'Haifa']
-const menMembers = ['Arya', 'Adit', 'Aar', 'Fadil', 'Yusa', 'Bajsan', 'Rai', 'Iki', 'Farid', 'Fajar', 'Kevin', 'Rafli', 'Akbar', 'Nabil', 'Isan', 'Dimas', 'Andi', 'Dhiya', 'Try', 'Angra']
+const menMembers = ['Arya', 'Adit', 'Aar', 'Fadil', 'Yusa', 'Bajsan', 'Rai', 'Iki', 'Farid', 'Fajar', 'Kevin', 'Rafli', 'Akbar', 'Nabil', 'Dimas', 'Andi', 'Dhiya', 'Try', 'Angra']
 
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
