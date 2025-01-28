@@ -5,6 +5,7 @@ import { generateTeams } from '../utils/teamGenerator'
 import TeamDisplay from './TeamDisplay'
 import { Combobox } from '@headlessui/react'
 import { useTheme } from '../contexts/ThemeContext'
+import { ClipLoader } from 'react-spinners'  // Import the spinner
 
 const allMembers = [
   'Amel', 'Fanny', 'Talitha', 'Farha', 'Fenty', 'Fatra', 'Azka', 'Shelva', 'Sekar', 'Haifa',
@@ -20,6 +21,7 @@ export default function TeamPicker() {
   const [query, setQuery] = useState('')
   const [error, setError] = useState('')
   const [kingsEnabled, setKingsEnabled] = useState(false)
+  const [loading, setLoading] = useState(false)  // Add loading state
   const { isDarkMode } = useTheme()
 
   const filteredMembers = useMemo(() => {
@@ -36,8 +38,12 @@ export default function TeamPicker() {
   }, [membersPerTeam])
 
   const handleGenerateTeams = () => {
-    const generatedTeams = generateTeams(membersPerTeam, teamType, kingsEnabled ? selectedKings : [])
-    setTeams(generatedTeams)
+    setLoading(true)  // Set loading to true
+    setTimeout(() => {  // Simulate a network request
+      const generatedTeams = generateTeams(membersPerTeam, teamType, kingsEnabled ? selectedKings : [])
+      setTeams(generatedTeams)
+      setLoading(false)  // Set loading to false
+    }, 2000)
   }
 
   const handleMembersChange = (e) => {
@@ -196,7 +202,7 @@ export default function TeamPicker() {
             : 'text-white bg-indigo-600 hover:bg-indigo-700'
         } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed`}
       >
-        Generate Teams
+        {loading ? <ClipLoader size={24} color="white" /> : "Generate Teams"}  {/* Add spinner */}
       </button>
       {teams.length > 0 && <TeamDisplay teams={teams} />}
     </div>
